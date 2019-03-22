@@ -29,6 +29,7 @@ public class sw6485
 			System.out.print("#"+T+" ");
 			for(int l=0; l<P; l++)
 			{
+				
 				System.out.print(a[C[l]-1]+" ");
 			}
 		}
