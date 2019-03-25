@@ -12,31 +12,29 @@ public class sw1206 {
 			int a[]= new int[T];
 			int count =0;
 			for(int j=0; j<T;j++)
-			{
-				int b= stdin.nextInt();
-				a[j]=b;
-			}
-			for(int k=2;k<T-2;k++ )
-			{
-				int max1=a[k];
-				int max2=0;
-				for(int l=k-2;l<=k+2;l++)
 				{
-					if(max1<=a[l])
-						max1=a[l];
+					int b= stdin.nextInt();
+					a[j]=b;
 				}
-					if(max1==a[k])
-					{
-						a[k]=0;
-						for(int c=k-2;c<=k+2;c++)
+			for(int k=2;k<T-2;k++ )
+				{
+					int max1=256;
+					for(int l=k-2;l<k;l++)
 						{
-							if(max1<=a[c])
-								max2=a[c];
+							if(max1>a[k]-a[l])
+								max1=a[k]-a[l];
 						}
-						count= count+(max1-max2);
+					for(int c=k+1;c<=k+2;c++)
+						{
+							if(max1>a[k]-a[c])
+								max1=a[k]-a[c];
+						}
+					if(max1>0)
+					{
+						count+=max1;
 					}
-					else break;
-			}
+				}
+			System.out.println("#"+(i+1)+" " +count);
 		}
 	}
 }
